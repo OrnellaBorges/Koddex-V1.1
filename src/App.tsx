@@ -15,6 +15,22 @@ function App() {
     console.log("inputName is :", inputName);
     const file = e.target.files[0];
     console.log("file", file);
+
+    if (file) {
+      switch (inputName) {
+        case "sets":
+          setSetsCsvFile(file);
+          break;
+        case "inventories":
+          setInventoriesCsvFile(file);
+          break;
+        case "parts":
+          setPartsCsvFile(file);
+          break;
+        default:
+          console.warn("unknown file");
+      }
+    }
   };
 
   return (
