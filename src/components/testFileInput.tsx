@@ -1,10 +1,8 @@
-import React from "react";
-
 export type InputProps = {
   labelName: string;
 };
 
-export default function testFileInput({ labelName }: InputProps) {
+export default function TestFileInput({ labelName }: InputProps) {
   console.log("labelName", labelName);
   return (
     <>

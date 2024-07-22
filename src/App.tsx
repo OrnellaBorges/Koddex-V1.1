@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
+import TestFileInput from "./components/testFileInput";
+
 function App() {
   // INPUT STATE
 
@@ -38,17 +40,8 @@ function App() {
       <header className="App-header">
         <h1>Importez vos trois fichiers csv</h1>
         <div className="inputGroup">
-          <label className="label" htmlFor="setFileInput">
-            Sets:
-            <input
-              type="file"
-              name="sets"
-              accept=".csv"
-              id="setFileInput"
-              style={{ display: "block", marginTop: "8px" }}
-              onChange={handleFileChange}
-            />
-          </label>
+          <TestFileInput labelName="sets" />
+
           <label className="label" htmlFor="inventoriesFileInput">
             Inventories:
             <input
