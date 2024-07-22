@@ -1,9 +1,10 @@
-export type InputProps = {
-  labelName: string;
-};
+import { InputProps } from "../types/inputTypes";
 
-export default function TestFileInput({ labelName }: InputProps) {
-  console.log("labelName", labelName);
+export default function TestFileInput({
+  labelName,
+  handleFileChange,
+}: InputProps) {
+  //console.log("labelName", labelName);
   return (
     <>
       <label className="label" htmlFor={`${labelName}FileInput`}>
@@ -12,9 +13,9 @@ export default function TestFileInput({ labelName }: InputProps) {
           type="file"
           name={labelName.toLowerCase()}
           accept=".csv"
-          id="setFileInput"
+          id={`${labelName}FileInput`}
           style={{ display: "block", marginTop: "8px" }}
-          /* onChange={handleFileChange} */
+          onChange={handleFileChange}
         />
       </label>
     </>
