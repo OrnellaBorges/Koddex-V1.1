@@ -5,34 +5,25 @@ import TestFileInput from "./components/TestFileInput";
 
 function App() {
   // INPUT STATE
-  const [setsCsvFile, setSetsCsvFile] = useState<File | null>(null);
-  const [inventoriesCsvFile, setInventoriesCsvFile] = useState<File | null>(
-    null
-  );
-  const [partsCsvFile, setPartsCsvFile] = useState<File | null>(null);
-
+  const [csvData, setCsvData] = useState<string | null>(null);
   useEffect(() => {
     console.log("component is rendered");
   }, []);
 
   const handleFileChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
+    async (e: React.ChangeEvent<HTMLInputElement>) => {
       const inputName = e.target.name; // sets || inventories || parts
+      console.log("inputName", inputName);
       const file = e.target.files?.[0];
 
       if (file) {
-        switch (inputName) {
-          case "sets":
-            setSetsCsvFile(file);
-            break;
-          case "inventories":
-            setInventoriesCsvFile(file);
-            break;
-          case "parts":
-            setPartsCsvFile(file);
-            break;
-          default:
-            console.warn("unknown file");
+        // Lire le fichier (par exemple, en utilisant une fonction comme readCsv)
+        try {
+          const fileContent = await readCsv(file);
+          console.log("Fichier lu :", fileContent);
+          // Faites quelque chose avec le contenu du fichier
+        } catch (error) {
+          console.error("Erreur lors de la lecture du fichier :", error);
         }
       }
     },
@@ -43,18 +34,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Importez vos trois fichiers csv</h1>
-        <div className="inputGroup">
+        <form className="csvForm">
           <TestFileInput labelName="sets" handleFileChange={handleFileChange} />
-          <TestFileInput
-            labelName="inventories"
-            handleFileChange={handleFileChange}
-          />
-          <TestFileInput
-            labelName="parts"
-            handleFileChange={handleFileChange}
-          />
-          <button>READ</button>
-        </div>
+          <button type="submit">Parse CSV</button>
+        </form>
       </header>
     </div>
   );

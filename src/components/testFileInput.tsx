@@ -6,18 +6,16 @@ export default function TestFileInput({
 }: InputProps) {
   //console.log("labelName", labelName);
   return (
-    <>
-      <label className="label" htmlFor={`${labelName}FileInput`}>
-        {labelName}:
-        <input
-          type="file"
-          name={labelName.toLowerCase()}
-          accept=".csv"
-          id={`${labelName}FileInput`}
-          style={{ display: "block", marginTop: "8px" }}
-          onChange={handleFileChange}
-        />
-      </label>
-    </>
+    <label className="label" htmlFor={`${labelName}FileInput`}>
+      {labelName}:
+      <input
+        type="file"
+        name={labelName.toLowerCase()}
+        accept=".csv"
+        id={`${labelName}FileInput`}
+        style={{ display: "block", marginTop: "8px" }}
+        onChange={handleFileChange}
+      />
+    </label>
   );
 }
