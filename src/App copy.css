@@ -1,0 +1,69 @@
+.app {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 1rem;
+}
+
+.header .button {
+  font-size: 1rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: lightgreen;
+  color: black;
+  border-radius: 1rem;
+  font-weight: bold;
+}
+
+.header .inputs {
+  display: flex;
+}
+
+.header .label,
+.header .input {
+  cursor: pointer;
+}
+
+.main {
+  width: 100%;
+}
+
+.main .clickableList {
+  list-style: none;
+  text-align: left;
+}
+
+.main .clickableElement {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.main .collapsableIcon {
+  padding: 0 0.25rem;
+  background-color: lightgray;
+  color: black;
+  margin-right: 0.4rem;
+}
+
+.button {
+  background-color: transparent;
+  border: 0;
+  color: white;
+  cursor: pointer;
+}
+
+/* .clickableElement .button:before {
+  content: "+";
+  padding: 0 0.25rem;
+  display: inline-block;
+  background-color: lightgray;
+  color: black;
+  margin-right: 0.4rem;
+} */

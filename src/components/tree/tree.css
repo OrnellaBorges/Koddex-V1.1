@@ -1,0 +1,39 @@
+.main {
+  width: 100%;
+}
+
+.main .clickableList {
+  list-style: none;
+  text-align: left;
+}
+
+.main .clickableElement {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.main .collapsableIcon {
+  padding: 0 0.25rem;
+  background-color: lightgray;
+  color: black;
+  margin-right: 0.4rem;
+}
+
+.main .picto {
+  width: 10px;
+  height: 10px;
+  border: 1px solid white;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* .clickableElement .button:before {
+  content: "+";
+  padding: 0 0.25rem;
+  display: inline-block;
+  background-color: lightgray;
+  color: black;
+  margin-right: 0.4rem;
+} */
